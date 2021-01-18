@@ -22,7 +22,8 @@
             android:id="@+id/pwd"
             android:hint="Password"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:password="true"/>
     </LinearLayout>
     <LinearLayout
         android:gravity="center"

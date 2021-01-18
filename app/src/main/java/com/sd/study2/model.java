@@ -4,11 +4,21 @@ import java.sql.*;
 
 public class model implements ActionDB {
 
+    private String user;
+    private String pwd;
     private String empid;
     private String empname;
     private String empmail;
     private int salary;
     Connection c;
+
+    public void setUser(String user) {
+        this.user = user;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
 
     public void setEmpid(String empid) {
         this.empid = empid;
@@ -30,14 +40,9 @@ public class model implements ActionDB {
         this.c = c;
     }
 
-    public ResultSet searchData() throws Exception {
-        String sql="select * from employee where empname like CONCAT(?)";
-        PreparedStatement stm = c.prepareStatement(sql);
-        stm.setString(1, empname);
-        ResultSet rs = c.createStatement().executeQuery(sql);
 
-        return rs;
-    }
+
+
 
     @Override
     public ResultSet selectData() throws Exception {
